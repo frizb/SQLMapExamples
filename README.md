@@ -1,5 +1,9 @@
 # SQLMapExamples
-A list of sample SQL Map Injection Commands
+A list of sample SQL Map Injection Commands.  SQLMap is a powerful tool for identifying SQL injection vulnerabilities.  However, everytime I use it, I struggle with the parameters.  The following is a list of SQLMap one-liners that I have used in the past and keep here so I can copy and paste and modify the parameters are required.
+
+Reference:
+https://github.com/sqlmapproject/sqlmap/wiki/Usage
+
 
 
 ## SQLMap Injection on POST parameter with a PHP Session ID
