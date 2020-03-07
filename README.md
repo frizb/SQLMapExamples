@@ -4,7 +4,15 @@ A list of sample SQL Map Injection Commands.  SQLMap is a powerful tool for iden
 Reference:
 https://github.com/sqlmapproject/sqlmap/wiki/Usage
 
+## SQLMap and BurpSuite
+These days, all the cool kids will use a Request file generated from a proxy like BurpSuite to save a bunch of parameter typing.
+In burpsuite, when you are viewing a request in the proxy -> intercept tab, you can right click on the request and select "Copy to file" and save the request to a local file.
+Next you can point SQLMap to that request file using the -r parameter:
+```bash
+sqlmap -r request.req --dump --batch
+```
 
+This can save you having to dial in all the parameters to setup our SQL injection.
 
 ## SQLMap Injection on POST parameter with a PHP Session ID
 Here we have simple sql injection test agianst a single POST parameter
